@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hyperdev.androidme.data.BodyPartFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivHead"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/head1"/>
+
+        <ImageView
+            android:id="@+id/ivBody"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/body1"/>
+
+        <ImageView
+            android:id="@+id/ivLegs"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/legs1"/>
+
+    </LinearLayout>
+
+</FrameLayout>
