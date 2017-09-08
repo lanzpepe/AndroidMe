@@ -33,10 +33,8 @@ public class BodyPartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_body_part, container, false);
         
         findViews(view);
-
-        mHeadList = new ArrayList<>(AndroidImageAssets.getHeads());
-        mBodyList = new ArrayList<>(AndroidImageAssets.getBodies());
-        mLegsList = new ArrayList<>(AndroidImageAssets.getLegs());
+        bodyPartsList();
+        setAndroidImageAssets();
 
         mIvHead.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +57,8 @@ public class BodyPartFragment extends Fragment {
                     if (i == mBodyList.size() - 1)
                         i = 0;
                     else {
-                        Drawable drawableHead = ResourcesCompat.getDrawable(getResources(), mBodyList.get(i), null);
-                        mIvBody.setImageDrawable(drawableHead);
+                        Drawable drawableBody = ResourcesCompat.getDrawable(getResources(), mBodyList.get(i), null);
+                        mIvBody.setImageDrawable(drawableBody);
                     }
                 }
             }
@@ -73,8 +71,8 @@ public class BodyPartFragment extends Fragment {
                     if (i == mLegsList.size() - 1)
                         i = 0;
                     else {
-                        Drawable drawableHead = ResourcesCompat.getDrawable(getResources(), mLegsList.get(i), null);
-                        mIvLegs.setImageDrawable(drawableHead);
+                        Drawable drawableLegs = ResourcesCompat.getDrawable(getResources(), mLegsList.get(i), null);
+                        mIvLegs.setImageDrawable(drawableLegs);
                     }
                 }
             }
@@ -87,5 +85,17 @@ public class BodyPartFragment extends Fragment {
         mIvHead = (ImageView) view.findViewById(R.id.ivHead);
         mIvBody = (ImageView) view.findViewById(R.id.ivBody);
         mIvLegs = (ImageView) view.findViewById(R.id.ivLegs);
+    }
+
+    private void bodyPartsList() {
+        mHeadList = new ArrayList<>();
+        mBodyList = new ArrayList<>();
+        mLegsList = new ArrayList<>();
+    }
+
+    private void setAndroidImageAssets() {
+        mHeadList = AndroidImageAssets.getHeads();
+        mBodyList = AndroidImageAssets.getBodies();
+        mLegsList = AndroidImageAssets.getLegs();
     }
 }
